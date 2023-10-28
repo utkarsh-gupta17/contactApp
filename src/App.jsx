@@ -1,8 +1,7 @@
-
 const App = () => {
   return (
-    <div className="red">App</div>
-  )
-}
+  <div className="bg-red-500 justify-stretch flex">App</div>
+  );
+};
 
-export default App
+export default App;
