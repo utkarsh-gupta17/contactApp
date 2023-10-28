@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import NotFoundContact from "./components/NotFoundContact";
 import { FiSearch } from "react-icons/fi";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useState } from "react";
@@ -81,9 +82,11 @@ const App = () => {
           </div>
         </div>
         <div className="mt-4 gap-3 flex flex-col">
-          {contacts.map((contact) => (
+          {contacts.length <= 0 ? (
+            <NotFoundContact />
+          ):(contacts.map((contact) => (
             <ContactCards key={contact.id} contacts={contact} />
-          ))}
+          )))}
         </div>
       </div>
       <AddandUpdateContact isOpen={isOpen} onClose={onClose} />

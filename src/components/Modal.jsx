@@ -6,8 +6,8 @@ const Modal = ({ onClose, isOpen, children }) => {
     <>
       <div>
         {isOpen && (
-          <>
-            <div className="m-auto relative z-50 min-h-[12.5rem] max-w-[80%] bg-white p-4">
+          <div className="grid place-items-center absolute top-0 z-40 backdrop-blur h-screen w-screen">
+            <div className="m-auto relative z-50 min-h-[12.5rem] min-w-[80%] bg-white p-4">
               <div className="flex justify-end">
                 <AiOutlineClose
                   onClick={onClose}
@@ -16,8 +16,7 @@ const Modal = ({ onClose, isOpen, children }) => {
               </div>
               {children}
             </div>
-            <div onClick={onClose} className="absolute top-0 z-40 backdrop-blur h-screen w-screen" />
-          </>
+          </div>
         )}
       </div>
     </>,
